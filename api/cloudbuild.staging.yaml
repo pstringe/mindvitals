@@ -1,0 +1,31 @@
+steps:
+  - name: node:16
+    entrypoint: npm
+    args: ['install']
+
+  - name: node:16
+    entrypoint: npm
+    args: ['run', 'build']
+
+  - id: env-substitute
+    name: 'gcr.io/$PROJECT_ID/envsubst'
+    args: ['app.staging.yaml']
+    env:
+      - 'AUTH_DB_USER=${_AUTH_DB_USER}'
+      - 'AUTH_DB_PASSWORD=${_AUTH_DB_PASSWORD}'
+      - 'AUTH_DB_HOST=${_AUTH_DB_HOST}'
+      - 'AUTH_DB_NAME=${_AUTH_DB_NAME}'
+      - 'BASE_URL=${_BASE_URL}'
+      - 'JWT_SECRET=${_JWT_SECRET}'
+      - 'JWT_EXPIRES_IN=${_JWT_EXPIRES_IN}'
+      - 'NEST_DEBUG=${_NEST_DEBUG}'
+      - 'BASE_URL_LOCAL=${_BASE_URL_LOCAL}'
+      - 'BASE_URL_STAGING=${_BASE_URL_STAGING}'
+      - 'CURRENT_ENV=${_CURRENT_ENV}'
+      - 'AWS_ACCESS_KEY_ID=${_AWS_ACCESS_KEY_ID}'
+      - 'AWS_SECRET_ACCESS_KEY=${_AWS_SECRET_ACCESS_KEY}'
+  - id: deploy
+    name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', 'app.staging.yaml']
+
+timeout: '1600s'

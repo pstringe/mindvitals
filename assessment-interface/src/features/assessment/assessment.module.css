@@ -1,0 +1,9 @@
+assessmentBox {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+assessmentContainer {
+    background-color: #F8FAF8,
+}

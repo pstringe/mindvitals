@@ -1,0 +1,7 @@
+dispatch:
+  - url: "api.mindvitals.io/*"
+    service: "default"
+  - url: "portal.mindvitals.io/*"
+    service: "midvitalsproviderdashboard"
+  - url: "screening.mindvitals.io/*"
+    service: "midvitalspatientinterfacestaging"

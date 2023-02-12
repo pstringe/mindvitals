@@ -1,0 +1,27 @@
+.instructionsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #183F4F;
+    text-align: center;
+}
+
+.title {
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #183F4F;
+}
+
+.instructions {
+    font-size: 18px;
+    line-height: 24px;
+    white-space: pre-line;
+}
+
+.mainImg {
+    width: 384;
+    height: 96;
+}

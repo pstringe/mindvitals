@@ -1,0 +1,27 @@
+{
+    "name": "PHQ-7",
+    "resultHeading": "Depression",
+    "questions":[
+        { "prompt": "Trouble falling or staying asleep, or sleeping too much?", "answerSetIndex": 0 },
+        { "prompt": "Feeling tired or having little energy?", "answerSetIndex": 0 },
+        { "prompt": "Poor appetite or overeating?", "answerSetIndex": 0 },
+        { "prompt": "Feeling bad about yourself or that you are a failure or have let yourself or your family down?", "answerSetIndex": 0 },
+        { "prompt": "Trouble concentrating on things, such as reading the newspaper or watching television?", "answerSetIndex": 0 },
+        { "prompt": "Moving or speaking so slowly that other people could have noticed? Or the opposite - being so fidgety or restless that you have been moving around a lot more than usual?", "answerSetIndex": 0 },
+        { "prompt": "Thoughts that you would be better off dead or of hurting yourself in some way?", "answerSetIndex": 0 }
+    ],
+    "answerSets": [
+        [
+            {"choice": "Not at all", "pointValue": 0},
+            {"choice": "Several days", "pointValue": 1},
+            {"choice": "More than half the days", "pointValue": 2},
+            {"choice": "Nearly every day", "pointValue": 3}
+        ]
+    ],
+    "scoringScale": {
+        "4": "minimal",
+        "19": "moderate",
+        "27": "severe"
+    },
+    "length": 7
+}

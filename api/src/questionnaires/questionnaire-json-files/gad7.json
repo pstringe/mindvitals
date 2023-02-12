@@ -1,0 +1,27 @@
+{
+    "name": "GAD-7",
+    "resultHeading": "Anxiety",
+    "questions":[
+        {"prompt": "Feeling nervous, anxious, or on edge", "answerSetIndex": 0},
+        {"prompt": "Not being able to stop or control worrying", "answerSetIndex": 0},
+        {"prompt": "Worrying too much about different things", "answerSetIndex": 0},
+        {"prompt": "Trouble relaxing", "answerSetIndex": 0},
+        {"prompt": "Being so restless that it's hard to sit still", "answerSetIndex": 0},
+        {"prompt": "Becoming easily annoyed or irritable", "answerSetIndex": 0},
+        {"prompt": "Feeling afraid as if something awful might happen", "answerSetIndex": 0}
+    ],
+    "answerSets": [
+        [
+            {"choice": "Not at all", "pointValue": 0},
+            {"choice": "Several days", "pointValue": 1},
+            {"choice": "More than half the days", "pointValue": 2},
+            {"choice": "Nearly every day", "pointValue": 3}
+        ]
+    ],
+    "length": 7,
+    "scoringScale" : {
+        "4" : "minimal",
+        "14": "moderate",
+        "21": "severe"
+    }
+}

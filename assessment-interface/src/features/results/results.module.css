@@ -1,0 +1,51 @@
+.resultsContainer {
+    margin: '1.5rem';
+}
+
+.title {
+    font-size: 24px;
+    line-height: 48px;
+    margin-top: 1rem;
+    margin-bottom: 12px;
+    color: #183F4F !important;
+}
+
+.thankyouTitle {
+    font-size: 32px;
+    line-height: 48px;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #183F4F !important;
+}
+
+.card {
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #E3E3E3;
+    line-height: 150%;
+    color: #183F4F !important;
+}
+
+.cardHeader {
+    margin: 0.5rem auto 16px auto;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #183F4F !important;
+    
+}
+
+.mainImg {
+    margin-top: 24px;
+    width: 384;
+    height: 96;
+}
+
+.instructions {
+    font-size: 18px;
+    line-height: 24px;
+    white-space: pre-line;
+    margin-bottom: 28px;
+    text-align: center;
+    max-width: 640px;
+}

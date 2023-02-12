@@ -1,0 +1,121 @@
+[
+    {
+        "scoringScale": [],
+        "_id": "61ada4f21bacfd14407f74b8",
+        "answers": [],
+        "questions": [],
+        "__v": 0,
+        "resultHeading": "Anxiety"
+    },
+    {
+        "scoringScale": [],
+        "_id": "61ada57178080c3189f66b10",
+        "answers": [
+            "Not at all",
+            "Several days",
+            "More than half the days",
+            "Nearly every day"
+        ],
+        "questions": [
+            "Feeling nervous, anxious, or on edge",
+            "Not being able to stop or control worrying",
+            "Worrying too much about different things",
+            "Trouble relaxing",
+            "Being so restless that it's hard to sit still",
+            "Becoming easily annoyed or irritable",
+            "Feeling afraid as if something awful might happen"
+        ],
+        "name": "GAD-7",
+        "__v": 1,
+        "length": 7,
+        "resultHeading": "Anxiety"
+    },
+    {
+        "scoringScale": [],
+        "_id": "61b11fed85904982743017ae",
+        "answers": [
+            "Not at all",
+            "Several Days",
+            "More than half the days",
+            "Nearly every day"
+        ],
+        "questions": [
+            "Little interest or pleasure in doing things?",
+            "Feeling down, depressed, or hopeless?",
+            "Trouble falling or staying asleep, or sleeping too much?",
+            "Feeling tired or having little energy?",
+            "Poor appetite or overeating?",
+            "Feeling bad about yourself — or that you are a failure or have let yourself or your family down?",
+            "Trouble concentrating on things, such as reading the newspaper or watching television?",
+            "Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?",
+            "Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
+        ],
+        "name": "PHQ-9",
+        "__v": 0,
+        "length": 9,
+        "resultHeading": "Depression"
+    },
+    {
+        "scoringScale": [],
+        "_id": "61b1201785904982743017b1",
+        "answers": [
+            "Not at all",
+            "Several Days",
+            "More than half the days",
+            "Nearly every day"
+        ],
+        "questions": [
+            "Little interest or pleasure in doing things?",
+            "Feeling down, depressed, or hopeless?"
+        ],
+        "name": "PHQ-2",
+        "__v": 0,
+        "length": 2,
+        "resultHeading": "Depression"
+    },
+    {
+        "_id": "61b1202285904982743017b3",
+        "answers": [
+            "Not at all",
+            "Several Days",
+            "More than half the days",
+            "Nearly every day"
+        ],
+        "questions": [
+            "Trouble falling or staying asleep, or sleeping too much?",
+            "Feeling tired or having little energy?",
+            "Poor appetite or overeating?",
+            "Feeling bad about yourself — or that you are a failure or have let yourself or your family down?",
+            "Trouble concentrating on things, such as reading the newspaper or watching television?",
+            "Moving or speaking so slowly that other people could have noticed? Or so fidgety or restless that you have been moving a lot more than usual?",
+            "Thoughts that you would be better off dead, or thoughts of hurting yourself in some way?"
+        ],
+        "name": "PHQ-7",
+        "__v": 7,
+        "length": 7,
+        "resultHeading": "Depression",
+        "scoringScale": [
+            "minimal",
+            "minimal",
+            "minimal",
+            "minimal",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "moderate",
+            "severe",
+            "severe",
+            "severe",
+            "severe",
+            "severe",
+            "severe",
+            "severe"
+        ]
+    }
+]

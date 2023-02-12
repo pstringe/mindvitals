@@ -1,0 +1,21 @@
+runtime: nodejs16
+service: default
+env_variables:
+  AUTH_DB_USER: ${AUTH_DB_USER}
+  AUTH_DB_PASSWORD: ${AUTH_DB_PASSWORD}
+  AUTH_DB_HOST: ${AUTH_DB_HOST}
+  AUTH_DB_NAME: ${AUTH_DB_NAME}
+  BASE_URL: ${BASE_URL}
+  JWT_SECRET: ${JWT_SECRET}
+  JWT_EXPIRES_IN: ${JWT_EXPIRES_IN}
+  NEST_DEBUG: ${NEST_DEBUG}
+  BASE_URL_LOCAL: ${BASE_URL_LOCAL}
+  BASE_URL_STAGING: ${BASE_URL_STAGING}
+  CURRENT_ENV: ${CURRENT_ENV}
+manual_scaling:
+  instances: 1
+
+resources:
+  cpu: .5
+  memory_gb: 0.5
+  disk_size_gb: 1

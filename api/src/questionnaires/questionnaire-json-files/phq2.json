@@ -1,0 +1,22 @@
+{
+    "name": "PHQ-2",
+    "resultHeading": "Depression",
+    "questions":[
+        { "prompt": "Little interest or pleasure in doing things?", "answerSetIndex": 0 },
+        { "prompt": "Feeling down, depressed, or hopeless?", "answerSetIndex": 0 }       
+    ],
+    "answerSets": [
+        [
+            {"choice": "Not at all", "pointValue": 0},
+            {"choice": "Several days", "pointValue": 1},
+            {"choice": "More than half the days", "pointValue": 2},
+            {"choice": "Nearly every day", "pointValue": 3}
+        ]
+    ],
+    "scoringScale": {
+        "4": "minimal",
+        "19": "moderate",
+        "27": "severe"
+    },
+    "length": 2
+}

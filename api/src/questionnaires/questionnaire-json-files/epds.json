@@ -1,0 +1,71 @@
+{
+    "name": "EPDS",
+    "resultHeading": "Perinatal/Postnatal Depression",
+    "questions":[
+        {"prompt": "I have been able to laugh and see the funny side of things", "answerSetIndex": 0},
+        {"prompt": "I have looked forward with enjoyment to things", "answerSetIndex": 1},
+        {"prompt": "I have blamed myself unnecessarily when things went wrong", "answerSetIndex": 2},
+        {"prompt": "I have been anxious or worried for no good reason", "answerSetIndex": 3},
+        {"prompt": "I have felt scared or panicky for no very good reason", "answerSetIndex": 4},
+        {"prompt": "Things have been getting on top of me", "answerSetIndex": 5},
+        {"prompt": "I have been so unhappy that I have had difficulty sleeping", "answerSetIndex": 6},
+        {"prompt": "I have felt sad or miserable", "answerSetIndex": 6},
+        {"prompt": "I have been so unhappy that I have been crying" , "answerSetIndex": 2},
+        {"prompt": "The thought of harming myself has occurred to me ", "answerSetIndex": 7}
+    ],
+    "answerSets": [
+        [
+            {"choice": "As much as I always could", "pointValue": 0},
+            {"choice": "Not quite so much now", "pointValue": 1},
+            {"choice": "Definitely not so much now", "pointValue": 2},
+            {"choice": "Not at all", "pointValue": 3}
+        ],
+        [
+            {"choice": "As much as I ever did", "pointValue": 0},
+            {"choice": "Rather less than I used to ", "pointValue": 1},
+            {"choice": "Definitely less than I used to", "pointValue": 2},
+            {"choice": "Hardly at all", "pointValue": 3}
+        ],
+        [
+            {"choice": "Yes, most of the time", "pointValue": 3},
+            {"choice": "Yes, some of the time", "pointValue": 2},
+            {"choice": "Not very often", "pointValue": 1},
+            {"choice": "No, never", "pointValue": 0}
+        ],
+        [
+            {"choice": "No, not at all", "pointValue": 0},
+            {"choice": "Hardly ever", "pointValue": 1},
+            {"choice": "Yes, sometimes", "pointValue": 2},
+            {"choice": "Yes, very often", "pointValue": 3}
+        ],
+        [
+            {"choice": "Yes, quite a lot", "pointValue": 3},
+            {"choice": "Yes, sometimes", "pointValue": 2},
+            {"choice": "No, not much", "pointValue": 1},
+            {"choice": "Hardly at all", "pointValue": 0}
+        ],
+        [
+            {"choice": "Yes, most of the time I haven't been able to cope ", "pointValue": 3},
+            {"choice": "Yes, sometimes I haven't been coping as well as usual ", "pointValue": 2},
+            {"choice": "No, most of the time I have coped quite well", "pointValue": 1},
+            {"choice": "No, I have been coping as well as ever", "pointValue": 0}
+        ],
+        [
+            {"choice": "Yes, most of the time", "pointValue": 3},
+            {"choice": "Yes, some of the time", "pointValue": 2},
+            {"choice": "Not very often", "pointValue": 1},
+            {"choice": "No, not at all", "pointValue": 0}
+        ],
+        [
+            {"choice": "Yes, quite a often", "pointValue": 3},
+            {"choice": "Sometimes", "pointValue": 2},
+            {"choice": "Hardly ever", "pointValue": 1},
+            {"choice": "Never", "pointValue": 0}
+        ]
+    ],
+    "scoringScale": {
+        "8": "minimal",
+        "30": "moderate"
+    },
+    "length": 10
+}

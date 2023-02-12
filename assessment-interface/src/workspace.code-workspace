@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../mindvitals-api"
+		},
+		{
+			"path": "../../mindvitals-provider-dashboard"
+		}
+	]
+}
