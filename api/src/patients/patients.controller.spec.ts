@@ -1,7 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing'
-
+import { Test, TestingModule } from '@nestjs/testing';
+import faker from 'faker';
 import { PatientsController } from './patients.controller'
 import { PatientsService } from './patients.service'
+
+
+const generatePatient = () => {
+  return {
+    f
+  }
+}
 
 describe('PatientsController', () => {
   let controller: PatientsController
