@@ -38,6 +38,7 @@
     "@nestjs/passport": "^8.0.1",
     "@nestjs/platform-express": "^8.2.4",
     "@nestjs/swagger": "^5.1.5",
+    "@types/faker": "^6.6.9",
     "aws-sdk": "^2.1046.0",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.4.0",
@@ -54,7 +55,7 @@
     "uuidv4": "^6.2.12"
   },
   "devDependencies": {
-    "@faker-js/faker": "^6.0.0-alpha.6",
+    "@faker-js/faker": "^7.6.0",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",

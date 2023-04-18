@@ -14,4 +14,9 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
   },
+  "files": [
+    "src/faker.d.ts",
+    "src/patients/patients.service.ts"
+  ],
+  "include": ["src/**/*"]
 }

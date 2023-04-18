@@ -17,10 +17,10 @@ export class CreatePatientDto {
   dob: Date
 
   @ApiProperty()
-  dateOfMostRecentScreener: Date
+  dateOfMostRecentScreener?: Date
 
   @ApiProperty()
-  highestSeverityOfMostRecentScreener: string
+  highestSeverityOfMostRecentScreener?: string
 
   @ApiProperty()
   providerId: string

@@ -7,11 +7,11 @@ export type PatientDocument = Patient & mongoose.Document
 
 @Schema({
   toJSON: {
-    getters: true
+    getters: true,
   },
   toObject: {
-    getters: true
-  }
+    getters: true,
+  },
 })
 export class Patient {
   @Prop()

@@ -19,6 +19,8 @@ async function bootstrap() {
   const whitelist = [
     'http://localhost:3000',
     'http://localhost:3001',
+    'http://localhost:3002',
+    'http://localhost:3003',
     'https://midvitalspatientinterfacestaging-dot-cynomys-nonprod.df.r.appspot.com',
     'https://midvitalspatientinterfacestaging-dot-mindvitals-nonprod.wl.r.appspot.com',
     'https://mindvitalsproviderdashboard-dot-mindvitals-nonprod.wl.r.appspot.com',

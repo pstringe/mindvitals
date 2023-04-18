@@ -2,7 +2,7 @@ import { Injectable, NotFoundException, Query } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
-import { PersonnelService } from 'personnel/personnel.service'
+import { PersonnelService } from '../personnel/personnel.service'
 
 import { CreatePatientDto } from './dto/create-patient.dto'
 import { UpdatePatientDto } from './dto/update-patient.dto'
@@ -19,33 +19,34 @@ export class PatientsService {
     if (!phoneNo || typeof phoneNo !== 'string') {
       return 'INVALID'
     }
-    phoneNo = phoneNo.replace(/\D/g, '');
+    phoneNo = phoneNo.replace(/\D/g, '')
     if (phoneNo.length !== 11) {
-      phoneNo = '1' + phoneNo;
+      phoneNo = '1' + phoneNo
     }
-    return phoneNo;
+    return phoneNo
   }
 
   public async create(createPatientDto: CreatePatientDto) {
-    let phoneNo = this.sanitizePhoneNo(createPatientDto.phoneNo);
+    const phoneNo = this.sanitizePhoneNo(createPatientDto.phoneNo)
     const patient = new this.patientModel({ ...createPatientDto, phoneNo })
     patient.save()
     return patient
   }
 
   public async findAll(skip: number, limit: number, query: any) {
-    let filters = {};
-    let sorts = this.deserializeSortModel(query);
-    if (query?.filters === 'true') {      
-      filters = this.deserializeFilterModel(query);
+    let filters = {}
+    const sorts = this.deserializeSortModel(query)
+    if (query?.filters === 'true') {
+      filters = this.deserializeFilterModel(query)
     }
-    const patients = await this.patientModel.find({...filters})
-    .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
-    .skip(skip)
-    .limit(limit)
-    .exec()
-    const count = await this.patientModel.countDocuments();
-    return { patients, count}
+    const patients = await this.patientModel
+      .find({ ...filters })
+      .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
+      .skip(skip)
+      .limit(limit)
+      .exec()
+    const count = await this.patientModel.countDocuments()
+    return { patients, count }
   }
 
   public async findOne(id: string) {
@@ -53,8 +54,8 @@ export class PatientsService {
   }
 
   /*
-  ** map properties specified in the gird's filter model to properties in the patient model
-  */
+   ** map properties specified in the gird's filter model to properties in the patient model
+   */
 
   private mapKey(key: string) {
     const mapping = {
@@ -76,87 +77,92 @@ export class PatientsService {
   }
 
   /*
-  ** isolate sorts from query
-  */
+   ** isolate sorts from query
+   */
 
   public deserializeSortModel(query: any) {
-    console.log('query in isolate', query);
+    console.log('query in isolate', query)
     //check if query object contains sorts
     if (query?.sorts !== 'true') {
-      return {};
+      return {}
     }
-    let params = Object.entries(query);
-    let sorts = {};
+    const params = Object.entries(query)
+    const sorts = {}
     params.forEach(([key, value]) => {
       if (value === 'asc' || value === 'desc') {
-        sorts[this.mapKey(key)] = this.getSortDirection(value);
+        sorts[this.mapKey(key)] = this.getSortDirection(value)
       }
     })
-    return sorts;
+    return sorts
   }
 
   /*
-  ** convert seriealized filter model into a mongoose query object
-  */
+   ** convert seriealized filter model into a mongoose query object
+   */
 
-  private deserializeFilterModel (data: any) {
-    delete data?.filters?.skip;
-    delete data?.filters?.limit;
-    delete data?.filters?.filters;
-    const filters = {};
-    const items = Object.entries(data);
+  private deserializeFilterModel(data: any) {
+    delete data?.filters?.skip
+    delete data?.filters?.limit
+    delete data?.filters?.filters
+    const filters = {}
+    const items = Object.entries(data)
     items.forEach(([key, value]) => {
-      const tokens = (value as string).split('~');
-      const operator = tokens[0];
-      const fieldValue = tokens[1];
+      const tokens = (value as string).split('~')
+      const operator = tokens[0]
+      const fieldValue = tokens[1]
 
       if (operator === 'contains') {
-        filters[this.mapKey(key)] = fieldValue;
+        filters[this.mapKey(key)] = fieldValue
       }
     })
-    return filters;
-  }  
+    return filters
+  }
 
-  public async findByProviderId(id: string, skip: number, limit: number, query: any) {
+  public async findByProviderId(
+    id: string,
+    skip: number,
+    limit: number,
+    query: any,
+  ) {
     const personnel = await this.personnelService.findOne(id)
     if (!personnel) {
       return new NotFoundException('Provider not found: findByProviderId')
     }
-    let filters = {};
-    let sorts = this.deserializeSortModel(query);
-    if (query?.filters === 'true') {      
-      filters = this.deserializeFilterModel(query);
+    let filters = {}
+    const sorts = this.deserializeSortModel(query)
+    if (query?.filters === 'true') {
+      filters = this.deserializeFilterModel(query)
     }
-    const patients = await this.patientModel.find({ providerId: id , ...filters})
-    .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
-    .skip(skip)
-    .limit(limit)
-    .exec()
-    const count = await this.patientModel.countDocuments({ providerId: id });
-    return { patients, count}
+    const patients = await this.patientModel
+      .find({ providerId: id, ...filters })
+      .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
+      .skip(skip)
+      .limit(limit)
+      .exec()
+    const count = await this.patientModel.countDocuments({ providerId: id })
+    return { patients, count }
   }
 
   public async search(name: string, skip: number, limit: number, query: any) {
-    let filters = {};
-    let sorts = this.deserializeSortModel(query);
-    if (query?.filters === 'true') {      
-      filters = this.deserializeFilterModel(query);
+    let filters = {}
+    const sorts = this.deserializeSortModel(query)
+    if (query?.filters === 'true') {
+      filters = this.deserializeFilterModel(query)
     }
-    const patients = await this.patientModel.find(
-      {
+    const patients = await this.patientModel
+      .find({
         $or: [
-          {lastName: { $regex: name, $options: 'i' }},
-          {firstName: { $regex: name, $options: 'i' }},
+          { lastName: { $regex: name, $options: 'i' } },
+          { firstName: { $regex: name, $options: 'i' } },
         ],
-        ...filters
-      }, 
-    )
-    .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
-    .skip(skip)
-    .limit(limit)
-    .exec()
-    const count = await this.patientModel.countDocuments();
-    return { patients, count}
+        ...filters,
+      })
+      .sort(Object.keys(sorts)?.length ? sorts : { lastName: 1 })
+      .skip(skip)
+      .limit(limit)
+      .exec()
+    const count = await this.patientModel.countDocuments()
+    return { patients, count }
   }
 
   public async update(id: string, updatePatientDto: UpdatePatientDto) {

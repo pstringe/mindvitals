@@ -11,6 +11,7 @@ export class AuthController {
     @UseGuards(AuthGuard('local'))
     @Post('login')
     login(@Res({ passthrough: true }) res, @Request() req): any {
+        console.log({});
         const login = this.authService.login(res, req?.user);
         return login;
     }

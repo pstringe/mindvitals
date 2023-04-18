@@ -1,26 +1,27 @@
 import { Module } from '@nestjs/common'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { MongooseModule } from '@nestjs/mongoose'
+
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { UsersModule } from './users/users.module'
-import { MongooseModule } from '@nestjs/mongoose'
+import { AssessmentsModule } from './assessments/assessments.module'
 import { AuthModule } from './auth/auth.module'
 import { AuthService } from './auth/auth.service'
-import { OrganizationsModule } from './organizations/organizations.module'
-import { PersonnelModule } from './personnel/personnel.module'
-import { OrganizationDbConfigService } from './organization-db-config/organization-db-config.service'
-import { OrganizationDbConfigModule } from './organization-db-config/organization-db-config.module'
-import { ConfigModule, ConfigService } from '@nestjs/config'
-import { PatientsModule } from './patients/patients.module'
-import { AssessmentsModule } from './assessments/assessments.module'
-import { QuestionnairesModule } from './questionnaires/questionnaires.module'
-import { BatchModule } from './batch/batch.module'
 import { AwsSdkModule } from './aws-sdk/aws-sdk.module'
-import { NotificationsModule } from './notifications/notifications.module'
-import { ValidationModule } from './validation/validation.module'
-import { FilesModule } from './files/files.module';
-import { ReferralsModule } from './referrals/referrals.module';
-import { MigrationsModule } from './migrations/migrations.module';
+import { BatchModule } from './batch/batch.module'
+import { FilesModule } from './files/files.module'
 import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
+import { MigrationsModule } from './migrations/migrations.module';
+import { NotificationsModule } from './notifications/notifications.module'
+import { OrganizationDbConfigModule } from './organization-db-config/organization-db-config.module'
+import { OrganizationDbConfigService } from './organization-db-config/organization-db-config.service'
+import { OrganizationsModule } from './organizations/organizations.module'
+import { PatientsModule } from './patients/patients.module'
+import { PersonnelModule } from './personnel/personnel.module'
+import { QuestionnairesModule } from './questionnaires/questionnaires.module'
+import { ReferralsModule } from './referrals/referrals.module'
+import { UsersModule } from './users/users.module'
+import { ValidationModule } from './validation/validation.module'
 
 @Module({
   imports: [
@@ -35,7 +36,7 @@ import { ForgotPasswordModule } from './forgot-password/forgot-password.module';
         )}:${configService.get('AUTH_DB_PASSWORD')}@${configService.get(
           'AUTH_DB_HOST',
         )}/${configService.get('AUTH_DB_NAME')}?retryWrites=true&w=majority`
-        console.log('connection', connection);
+        console.log('connection', connection)
         return {
           uri: connection,
         }
