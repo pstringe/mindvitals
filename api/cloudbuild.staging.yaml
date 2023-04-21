@@ -3,6 +3,10 @@ steps:
     entrypoint: npm
     args: ['install']
 
+  - name: enterAPI
+    enrtypoint: cd
+    args: ['api']
+    
   - name: node:16
     entrypoint: npm
     args: ['run', 'build']
