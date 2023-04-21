@@ -1,15 +1,13 @@
 steps:
-  - name: enterAPI
-    enrtypoint: cd
-    args: ['api']
-    
   - name: node:16
     entrypoint: npm
     args: ['install']
+    dir: '/api'
     
   - name: node:16
     entrypoint: npm
     args: ['run', 'build']
+    dir: '/api'
 
   - id: env-substitute
     name: 'gcr.io/$PROJECT_ID/envsubst'
@@ -33,3 +31,4 @@ steps:
     args: ['app', 'deploy', 'app.staging.yaml']
 
 timeout: '1600s'
+

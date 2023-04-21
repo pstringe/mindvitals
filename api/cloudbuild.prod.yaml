@@ -2,10 +2,12 @@ steps:
   - name: node:16
     entrypoint: npm
     args: ['install']
+    dir: '/api'
 
   - name: node:16
     entrypoint: npm
     args: ['run', 'build']
+    dir: '/api'
 
   - id: env-substitute
     name: 'gcr.io/$PROJECT_ID/envsubst'
@@ -22,8 +24,11 @@ steps:
       - 'BASE_URL_LOCAL=${_BASE_URL_LOCAL}'
       - 'BASE_URL_STAGING=${_BASE_URL_STAGING}'
       - 'CURRENT_ENV=${_CURRENT_ENV}'
+    dir: '/api'
+
   - id: deploy
     name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.prod.yaml']
+    dir: '/api'
 
 timeout: '1600s'
