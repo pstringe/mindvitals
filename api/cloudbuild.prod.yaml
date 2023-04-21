@@ -2,6 +2,7 @@ steps:
   - name: node:16
     entrypoint: npm
     args: ['install']
+    dir: './api'
 
   - name: node:16
     entrypoint: npm
