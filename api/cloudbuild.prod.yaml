@@ -11,7 +11,10 @@ steps:
 
   - id: env-substitute
     name: 'gcr.io/$PROJECT_ID/envsubst'
-    args: ['app.prod.yaml']
+    entrypoint: '/bin/sh'
+    args:
+      - '-c'
+      - 'envsubst < app.prod.template.yaml > app.prod.yaml'
     env:
       - 'AUTH_DB_USER=${_AUTH_DB_USER}'
       - 'AUTH_DB_PASSWORD=${_AUTH_DB_PASSWORD}'
@@ -30,5 +33,5 @@ steps:
     name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.prod.yaml']
     dir: './api'
-    
+
 timeout: '1600s'
