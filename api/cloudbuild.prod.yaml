@@ -31,4 +31,6 @@ steps:
     args: ['app', 'deploy', 'app.prod.yaml']
     dir: './api'
 
+images: 'gcr.io/cloud-builders/gcloud'
+
 timeout: '1600s'
