@@ -5,6 +5,6 @@ export const API_URL = ((env: string | undefined) => {
     if (env === 'staging')
         return 'https://mindvitals-384402.uc.r.appspot.com';
     if (env === 'production')
-        return 'https://api.mindvitals.io';
+        return 'https://mindvitals-384402.uc.r.appspot.com';
     return '';
 })(process.env.REACT_APP_ENV);
