@@ -2,13 +2,16 @@ steps:
   - name: node:16
     entrypoint: yarn
     args: ['install']
+    dir: './assessment-interface'
 
   - name: node:16
     entrypoint: yarn
     args: ['build:prod']
+    dir: './assessment-interface'
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.production.yaml']
+    dir: './assessment-interface'
    
 
 timeout: '1600s'
