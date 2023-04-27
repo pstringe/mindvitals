@@ -3,7 +3,7 @@ export const API_URL = ((env: string | undefined) => {
     if (env === 'local' || env === 'development')
         return 'http://localhost:8080';
     if (env === 'staging')
-        return 'https://mindvitals-nonprod.wl.r.appspot.com';
+        return 'https://mindvitals-384402.uc.r.appspot.com';
     if (env === 'production')
         return 'https://api.mindvitals.io';
     return '';

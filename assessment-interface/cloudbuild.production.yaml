@@ -13,5 +13,4 @@ steps:
     args: ['app', 'deploy', 'app.production.yaml']
     dir: './assessment-interface'
    
-
 timeout: '1600s'
