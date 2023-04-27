@@ -2,13 +2,16 @@ steps:
   - name: node:16
     entrypoint: npm
     args: ['install', '--legacy-peer-deps']
+    dir: './dashboard'
 
   - name: node:16
     entrypoint: yarn
     args: ['build:prod']
+    dir: './dashboard'
 
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', 'app.production.yaml']
+    dir: './dashboard'
    
 
 timeout: '1600s'
