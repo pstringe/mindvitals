@@ -4,12 +4,12 @@ export const localConfig = {
 }
 
 export const stagingConfig = {
-  apiUrl: 'https://mindvitals-nonprod.wl.r.appspot.com',
+  apiUrl: 'https://midvitalspatientinterfacestaging-dot-mindvitals-384402.uc.r.appspot.com',
   patientBaseUrl: 'https://midvitalspatientinterfacestaging-dot-mindvitals-nonprod.wl.r.appspot.com'
 }
 
 export const prodConfig = {
-  apiUrl: 'https://api.mindvitals.io',
+  apiUrl: 'https://midvitalspatientinterfacestaging-dot-mindvitals-384402.uc.r.appspot.com',
   patientBaseUrl: 'https://screening.mindvitals.io'
 }
 
