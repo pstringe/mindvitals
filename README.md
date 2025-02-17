@@ -1,4 +1,3 @@
-# mindvitals
 # Mindvitals Technical Specification
 
 ## Overview
